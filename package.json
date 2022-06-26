@@ -1,0 +1,19 @@
+{
+  "name": "shopingcarttest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikitius20/ShopingCartTest.git"
+  },
+  "author": "Nikita Zaika",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikitius20/ShopingCartTest/issues"
+  },
+  "homepage": "https://github.com/nikitius20/ShopingCartTest#readme"
+}
