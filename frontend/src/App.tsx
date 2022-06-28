@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Shop from "./pages/Shop";
+import Nav from "./pages/Nav";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Cart from "./pages/Cart";
+import { Stack, Box } from "@mui/material";
 
-function App() {
+export interface IAppProps {}
+
+const App: React.FunctionComponent<IAppProps> = (props) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Stack direction="column">
+        <Box bgcolor="lightblue" flex={1}>
+          <Nav />
+        </Box>
+        <Box flex={10}>
+          <Routes>
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+        </Box>
+      </Stack>
+    </Router>
   );
-}
+};
 
 export default App;
