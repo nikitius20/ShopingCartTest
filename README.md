@@ -10,4 +10,4 @@ cd backend
 npm startDev
 
 
-Web Aplication - https://endearing-daifuku-35941e.netlify.app/
+Web Aplication - https://endearing-daifuku-35941e.netlify.app
