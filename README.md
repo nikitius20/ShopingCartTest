@@ -8,3 +8,6 @@ npm start
 - To  run backend  
 cd backend
 npm startDev
+
+
+Web Aplication - https://magenta-pothos-b2be09.netlify.app/shop 
