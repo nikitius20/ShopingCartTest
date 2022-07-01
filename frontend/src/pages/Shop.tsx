@@ -24,7 +24,6 @@ const api = Axios.create({
 });
 
 const Shop: React.FunctionComponent<IShopProps> = (props) => {
-  console.log(process.env.REACT_APP_API_URI);
   const [shops, setShops] = useState<Array<string>>([""]);
   const [items, setItems] = useState<Array<Item>>([]);
   const [currentShop, setCurrentShop] = useState<string | undefined>();
@@ -40,16 +39,13 @@ const Shop: React.FunctionComponent<IShopProps> = (props) => {
 
     if (!currentShop) {
       api.get("/shops").then((res) => {
-        console.log(shops);
         setShops(res.data);
       });
       api.get("/allItems").then((res) => {
-        console.log(items);
         setItems(res.data);
       });
     } else {
       api.get(`/items?shop=${currentShop}`).then((res) => {
-        console.log(items);
         setItems(res.data);
       });
     }

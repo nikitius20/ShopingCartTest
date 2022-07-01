@@ -22,7 +22,6 @@ const api = Axios.create({
 });
 
 const Cart: React.FunctionComponent<ICartProps> = (props) => {
-  console.log(process.env.REACT_APP_API_URI);
   const navigate = useNavigate();
   const [orderList, setOrderList] = useState<Array<string>>([]);
   const [items, setItems] = useState<Array<Item>>([]);
@@ -66,7 +65,6 @@ const Cart: React.FunctionComponent<ICartProps> = (props) => {
         queryText += `&id=${el}`;
       });
       api.get(`/itemsById?${queryText}`).then((res: { data: any }) => {
-        console.log(res.data);
         setItems(res.data);
       });
     }
@@ -91,7 +89,6 @@ const Cart: React.FunctionComponent<ICartProps> = (props) => {
       phone: phone,
       note: note,
     };
-    console.log(newOrder);
     api.post(`/order`, newOrder).then((res: { data: any }) => {
       window.localStorage.removeItem("order");
       navigate("/shop");
@@ -219,7 +216,6 @@ const Cart: React.FunctionComponent<ICartProps> = (props) => {
                       } else {
                         newOrder.items[index].amount = 1;
                       }
-                      console.log(order);
                       setOrder(newOrder);
                     }}
                   />

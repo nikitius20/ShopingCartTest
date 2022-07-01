@@ -22,7 +22,6 @@ const ItemController = {
   async getItem(req: Request, res: Response) {
     try {
       const { id } = req.query;
-      console.log(id);
       const item = await Item.findById(id);
       if (!item) {
         res.statusMessage = "Item Not Found";
@@ -43,7 +42,6 @@ const ItemController = {
       }
       const listOfIems = await Item.find().where("_id").in(id).exec();
 
-      console.log(listOfIems);
       return res.status(200).json(listOfIems);
     } catch (err: any) {
       return res.status(500).json(err);
